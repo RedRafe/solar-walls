@@ -1,0 +1,69 @@
+Version: 0.0.13 (NOT official)
+  Bugfixes:
+    - Fixed error when placing solar walls: it was not possible to build them one next to each other in factorio 1.1
+  Changes:
+    - Udated to Factorio 1.1
+    - Redefined collision box and mask to stone wall's values
+    - Added startup settings for solar production and recipe ratios
+---------------------------------------------------------------------------------------------------
+Version: 0.0.11
+  Changes:
+    - Added script raised built and revive (Thanks to Bilka)
+      script_raised_built
+      script_raised_revive
+    - Added this changelog (Thanks to Pi-C)
+---------------------------------------------------------------------------------------------------
+Version: 0.0.10
+  Changes:
+    - Removed the following because I don't understand how to do it :(
+      script_raised_built
+      script_raised_revive
+      script_raised_destroy
+
+---------------------------------------------------------------------------------------------------
+Version: 0.0.8
+  Changes:
+    - Better compatibility with Upgrade Planner
+
+---------------------------------------------------------------------------------------------------
+Version: 0.0.7
+  Changes:
+    - Added solar to script raised buildings:
+      script_raised_built
+      script_raised_revive
+      script_raised_destroy
+
+---------------------------------------------------------------------------------------------------
+Version: 0.0.6
+  Bugfixes:
+    - Fixed error getting stone wall
+  Locale:
+    - Added Russian translation (Thanks to Va7ya)
+
+---------------------------------------------------------------------------------------------------
+Version: 0.0.5
+  Changes:
+    - Rebalancing of the recipe (Thanks IronCartographer )
+
+---------------------------------------------------------------------------------------------------
+Version: 0.0.4
+  Bugfixes:
+    - Fixed that solar walls couldn't be built by robots
+
+  Info:
+    - Updated for version 0.17 of Factorio
+
+---------------------------------------------------------------------------------------------------
+Version: 0.0.3
+  Bugfixes:
+    - Fixed wall been indestructible, when it not supposed to be.
+
+---------------------------------------------------------------------------------------------------
+Version: 0.0.2
+  Changes:
+    - Better wall graphics
+
+---------------------------------------------------------------------------------------------------
+Version: 0.0.1
+  Info:
+    - Initial release
