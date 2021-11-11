@@ -1,10 +1,13 @@
-Version: 0.0.13 (NOT official)
+Version: 0.0.14 (NOT official, by RedRafe)
   Bugfixes:
-    - Fixed error when placing solar walls: it was not possible to build them one next to each other in factorio 1.1
+    - Fixed collision boxes of solar walls
+    - Fixed solar panels used by solar walls causing collisions
+    - Fixed deconstruction planner: it was not possible to go through Solar Walls marked as deconstruction 
+    - Fixed icon in power production GUI
   Changes:
-    - Udated to Factorio 1.1
     - Redefined collision box and mask to stone wall's values
     - Added startup settings for solar production and recipe ratios
+    - Added startup setting for Wall stack size (will now affect vanilla walls too)
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.11
   Changes:

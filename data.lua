@@ -1,19 +1,19 @@
 local stone_wall = table.deepcopy(data.raw["wall"]["stone-wall"])
+local path_g = "__solar-walls__/graphics/"
 
 data:extend(
 {
 
 -- SOLAR PANEL V2
-
-   {
+  {
     type = "solar-panel",
     name = "wall-solar-panel",
-    icon = "__core__/graphics/cancel.png",
-    icon_size = 64,
-    ---flags = {"placeable-neutral", "player-creation"},
+    icon = path_g .. "solar-wall-2.png",
+    icon_size = 32,
     minable = {hardness = 0.2, mining_time = 0.5, result = "wall-solar-panel"},
     max_health = 350,
-    flags = stone_wall.flags,
+    flags = {"not-on-map", "placeable-off-grid"},
+    --flags = stone_wall.flags,
     collision_box = {{0, 0}, {0, 0}},
     selection_box = {{0, 0}, {0, 0}},
 	  hidden = true,
@@ -27,7 +27,7 @@ data:extend(
    --   layers =
   --    {
         {
-          filename = "__solar-walls__/graphics/transparent.png",
+          filename = path_g .. "transparent.png",
           priority = "extra-high",
           width = 32,
           height = 42,
@@ -37,24 +37,23 @@ data:extend(
     },
     production = tostring(settings.startup["solar-wall-production"].value) .. "kW"
   },
-    {
+  {
     type = "item",
     name = "wall-solar-panel",
-    icon = "__core__/graphics/cancel.png",
-    icon_size = 64,
+    icon = path_g .. "solar-wall-2.png",
+    icon_size = 32,
 	  hidden = true,
-    -- flags = {"goes-to-quickbar"},
     subgroup = "defensive-structure",
     order = "a[stone-wall]-a[ttone-wall]",
     place_result = "wall-solar-panel",
     stack_size = 100
   },
-   {
+  {
     type = "recipe",
     name = "wall-solar-panel",
     energy_required = 10,
-	  icon = "__core__/graphics/cancel.png",
-    icon_size = 64,
+	  icon = path_g .. "solar-wall-2.png",
+    icon_size = 32,
 
     enabled = false,
 	  hidden = true,
@@ -67,26 +66,20 @@ data:extend(
 	  result_count = settings.startup["solar-wall-recipe-ratio"].value
   },
 
-
-
-
-
-
-
-
 -- SOLAR WALL V2
-    {
+-- Solar Wall: Item
+  {
     type = "item",
     name = "solar-wall-2",
-    icon = "__solar-walls__/graphics/solar-wall-2.png",
+    icon = path_g .. "solar-wall-2.png",
     icon_size = 32,
-    -- flags = {"goes-to-quickbar"},
     subgroup = "defensive-structure",
     order = "a[stone-wall]-a[ttone-wall]",
     place_result = "solar-wall-2",
-    stack_size = 200
+    stack_size = 100
   },
-   {
+  -- Solar Wall: Recipe
+  {
     type = "recipe",
     name = "solar-wall-2",
     energy_required = 10,
@@ -98,14 +91,14 @@ data:extend(
 	    {"stone-wall", settings.startup["solar-wall-recipe-ratio"].value}
     },
     result = "solar-wall-2",
-	result_count = settings.startup["solar-wall-recipe-ratio"].value
+	  result_count = settings.startup["solar-wall-recipe-ratio"].value
   },
 
-
-    {
+  -- Solar Wall: Entity
+  {
     type = "wall",
     name = "solar-wall-2",
-    icon = "__solar-walls__/graphics/solar-wall-2.png",
+    icon = path_g .. "solar-wall-2.png",
     icon_size = 32,
     flags = stone_wall.flags,
     collision_box = stone_wall.collision_box,
@@ -192,7 +185,7 @@ data:extend(
         layers =
         {
           {
-            filename = "__solar-walls__/graphics/wall/wall-single.png",
+            filename = path_g .. "wall/wall-single.png",
             priority = "extra-high",
             width = 32,
             height = 46,
@@ -201,7 +194,7 @@ data:extend(
             shift = util.by_pixel(0, -6),
             hr_version =
             {
-              filename = "__solar-walls__/graphics/wall/hr-wall-single.png",
+              filename = path_g .. "wall/hr-wall-single.png",
               priority = "extra-high",
               width = 64,
               height = 86,
@@ -212,7 +205,7 @@ data:extend(
             }
           },
           {
-            filename = "__solar-walls__/graphics/wall/wall-single-shadow.png",
+            filename = path_g .. "wall/wall-single-shadow.png",
             priority = "extra-high",
             width = 50,
             height = 32,
@@ -221,7 +214,7 @@ data:extend(
             draw_as_shadow = true,
             hr_version =
             {
-              filename = "__solar-walls__/graphics/wall/hr-wall-single-shadow.png",
+              filename = path_g .. "wall/hr-wall-single-shadow.png",
               priority = "extra-high",
               width = 98,
               height = 60,
@@ -238,7 +231,7 @@ data:extend(
         layers =
         {
           {
-            filename = "__solar-walls__/graphics/wall/wall-vertical.png",
+            filename = path_g .. "wall/wall-vertical.png",
             priority = "extra-high",
             width = 32,
             height = 68,
@@ -247,7 +240,7 @@ data:extend(
             shift = util.by_pixel(0, 8),
             hr_version =
             {
-              filename = "__solar-walls__/graphics/wall/hr-wall-vertical.png",
+              filename = path_g .. "wall/hr-wall-vertical.png",
               priority = "extra-high",
               width = 64,
               height = 134,
@@ -258,7 +251,7 @@ data:extend(
             }
           },
           {
-            filename = "__solar-walls__/graphics/wall/wall-vertical-shadow.png",
+            filename = path_g .. "wall/wall-vertical-shadow.png",
             priority = "extra-high",
             width = 50,
             height = 58,
@@ -267,7 +260,7 @@ data:extend(
             draw_as_shadow = true,
             hr_version =
             {
-              filename = "__solar-walls__/graphics/wall/hr-wall-vertical-shadow.png",
+              filename = path_g .. "wall/hr-wall-vertical-shadow.png",
               priority = "extra-high",
               width = 98,
               height = 110,
@@ -284,7 +277,7 @@ data:extend(
         layers =
         {
           {
-            filename = "__solar-walls__/graphics/wall/wall-horizontal.png",
+            filename = path_g .. "wall/wall-horizontal.png",
             priority = "extra-high",
             width = 32,
             height = 50,
@@ -293,7 +286,7 @@ data:extend(
             shift = util.by_pixel(0, -4),
             hr_version =
             {
-              filename = "__solar-walls__/graphics/wall/hr-wall-horizontal.png",
+              filename = path_g .. "wall/hr-wall-horizontal.png",
               priority = "extra-high",
               width = 64,
               height = 92,
@@ -304,7 +297,7 @@ data:extend(
             }
           },
           {
-            filename = "__solar-walls__/graphics/wall/wall-horizontal-shadow.png",
+            filename = path_g .. "wall/wall-horizontal-shadow.png",
             priority = "extra-high",
             width = 62,
             height = 36,
@@ -313,7 +306,7 @@ data:extend(
             draw_as_shadow = true,
             hr_version =
             {
-              filename = "__solar-walls__/graphics/wall/hr-wall-horizontal-shadow.png",
+              filename = path_g .. "wall/hr-wall-horizontal-shadow.png",
               priority = "extra-high",
               width = 124,
               height = 68,
@@ -330,7 +323,7 @@ data:extend(
         layers =
         {
           {
-            filename = "__solar-walls__/graphics/wall/wall-corner-right.png",
+            filename = path_g .. "wall/wall-corner-right.png",
             priority = "extra-high",
             width = 32,
             height = 64,
@@ -339,7 +332,7 @@ data:extend(
             shift = util.by_pixel(0, 6),
             hr_version =
             {
-              filename = "__solar-walls__/graphics/wall/hr-wall-corner-right.png",
+              filename = path_g .. "wall/hr-wall-corner-right.png",
               priority = "extra-high",
               width = 64,
               height = 128,
@@ -350,7 +343,7 @@ data:extend(
             }
           },
           {
-            filename = "__solar-walls__/graphics/wall/wall-corner-right-shadow.png",
+            filename = path_g .. "wall/wall-corner-right-shadow.png",
             priority = "extra-high",
             width = 62,
             height = 60,
@@ -359,7 +352,7 @@ data:extend(
             draw_as_shadow = true,
             hr_version =
             {
-              filename = "__solar-walls__/graphics/wall/hr-wall-corner-right-shadow.png",
+              filename = path_g .. "wall/hr-wall-corner-right-shadow.png",
               priority = "extra-high",
               width = 124,
               height = 120,
@@ -376,7 +369,7 @@ data:extend(
         layers =
         {
           {
-            filename = "__solar-walls__/graphics/wall/wall-corner-left.png",
+            filename = path_g .. "wall/wall-corner-left.png",
             priority = "extra-high",
             width = 32,
             height = 68,
@@ -385,7 +378,7 @@ data:extend(
             shift = util.by_pixel(0, 6),
             hr_version =
             {
-              filename = "__solar-walls__/graphics/wall/hr-wall-corner-left.png",
+              filename = path_g .. "wall/hr-wall-corner-left.png",
               priority = "extra-high",
               width = 64,
               height = 134,
@@ -396,7 +389,7 @@ data:extend(
             }
           },
           {
-            filename = "__solar-walls__/graphics/wall/wall-corner-left-shadow.png",
+            filename = path_g .. "wall/wall-corner-left-shadow.png",
             priority = "extra-high",
             width = 54,
             height = 60,
@@ -405,7 +398,7 @@ data:extend(
             draw_as_shadow = true,
             hr_version =
             {
-              filename = "__solar-walls__/graphics/wall/hr-wall-corner-left-shadow.png",
+              filename = path_g .. "wall/hr-wall-corner-left-shadow.png",
               priority = "extra-high",
               width = 102,
               height = 120,
@@ -422,7 +415,7 @@ data:extend(
         layers =
         {
           {
-            filename = "__solar-walls__/graphics/wall/wall-t.png",
+            filename = path_g .. "wall/wall-t.png",
             priority = "extra-high",
             width = 32,
             height = 68,
@@ -431,7 +424,7 @@ data:extend(
             shift = util.by_pixel(0, 6),
             hr_version =
             {
-              filename = "__solar-walls__/graphics/wall/hr-wall-t.png",
+              filename = path_g .. "wall/hr-wall-t.png",
               priority = "extra-high",
               width = 64,
               height = 134,
@@ -442,7 +435,7 @@ data:extend(
             }
           },
           {
-            filename = "__solar-walls__/graphics/wall/wall-t-shadow.png",
+            filename = path_g .. "wall/wall-t-shadow.png",
             priority = "extra-high",
             width = 62,
             height = 60,
@@ -451,7 +444,7 @@ data:extend(
             draw_as_shadow = true,
             hr_version =
             {
-              filename = "__solar-walls__/graphics/wall/hr-wall-t-shadow.png",
+              filename = path_g .. "wall/hr-wall-t-shadow.png",
               priority = "extra-high",
               width = 124,
               height = 120,
@@ -468,7 +461,7 @@ data:extend(
         layers =
         {
           {
-            filename = "__solar-walls__/graphics/wall/wall-ending-right.png",
+            filename = path_g .. "wall/wall-ending-right.png",
             priority = "extra-high",
             width = 32,
             height = 48,
@@ -477,7 +470,7 @@ data:extend(
             shift = util.by_pixel(0, -4),
             hr_version =
             {
-              filename = "__solar-walls__/graphics/wall/hr-wall-ending-right.png",
+              filename = path_g .. "wall/hr-wall-ending-right.png",
               priority = "extra-high",
               width = 64,
               height = 92,
@@ -488,7 +481,7 @@ data:extend(
             }
           },
           {
-            filename = "__solar-walls__/graphics/wall/wall-ending-right-shadow.png",
+            filename = path_g .. "wall/wall-ending-right-shadow.png",
             priority = "extra-high",
             width = 62,
             height = 36,
@@ -497,7 +490,7 @@ data:extend(
             draw_as_shadow = true,
             hr_version =
             {
-              filename = "__solar-walls__/graphics/wall/hr-wall-ending-right-shadow.png",
+              filename = path_g .. "wall/hr-wall-ending-right-shadow.png",
               priority = "extra-high",
               width = 124,
               height = 68,
@@ -514,7 +507,7 @@ data:extend(
         layers =
         {
           {
-            filename = "__solar-walls__/graphics/wall/wall-ending-left.png",
+            filename = path_g .. "wall/wall-ending-left.png",
             priority = "extra-high",
             width = 32,
             height = 48,
@@ -523,7 +516,7 @@ data:extend(
             shift = util.by_pixel(0, -4),
             hr_version =
             {
-              filename = "__solar-walls__/graphics/wall/hr-wall-ending-left.png",
+              filename = path_g .. "wall/hr-wall-ending-left.png",
               priority = "extra-high",
               width = 64,
               height = 92,
@@ -534,7 +527,7 @@ data:extend(
             }
           },
           {
-            filename = "__solar-walls__/graphics/wall/wall-ending-left-shadow.png",
+            filename = path_g .. "wall/wall-ending-left-shadow.png",
             priority = "extra-high",
             width = 54,
             height = 36,
@@ -543,7 +536,7 @@ data:extend(
             draw_as_shadow = true,
             hr_version =
             {
-              filename = "__solar-walls__/graphics/wall/hr-wall-ending-left-shadow.png",
+              filename = path_g .. "wall/hr-wall-ending-left-shadow.png",
               priority = "extra-high",
               width = 102,
               height = 68,
@@ -557,7 +550,7 @@ data:extend(
       },
       filling =
       {
-        filename = "__solar-walls__/graphics/wall/wall-filling.png",
+        filename = path_g .. "wall/wall-filling.png",
           priority = "extra-high",
           width = 24,
           height = 30,
@@ -566,7 +559,7 @@ data:extend(
           shift = util.by_pixel(0, -2),
           hr_version =
           {
-            filename = "__solar-walls__/graphics/wall/hr-wall-filling.png",
+            filename = path_g .. "wall/hr-wall-filling.png",
             priority = "extra-high",
             width = 48,
             height = 56,
@@ -581,14 +574,14 @@ data:extend(
         sheets =
         {
           {
-            filename = "__solar-walls__/graphics/wall/wall-patch.png",
+            filename = path_g .. "wall/wall-patch.png",
             priority = "extra-high",
             width = 58,
             height = 64,
             shift = util.by_pixel(0, -2),
             hr_version =
             {
-              filename = "__solar-walls__/graphics/wall/hr-wall-patch.png",
+              filename = path_g .. "wall/hr-wall-patch.png",
               priority = "extra-high",
               width = 116,
               height = 128,
@@ -597,7 +590,7 @@ data:extend(
             }
           },
           {
-            filename = "__solar-walls__/graphics/wall/wall-patch-shadow.png",
+            filename = path_g .. "wall/wall-patch-shadow.png",
             priority = "extra-high",
             width = 74,
             height = 52,
@@ -605,7 +598,7 @@ data:extend(
             draw_as_shadow = true,
             hr_version =
             {
-              filename = "__solar-walls__/graphics/wall/hr-wall-patch-shadow.png",
+              filename = path_g .. "wall/hr-wall-patch-shadow.png",
               priority = "extra-high",
               width = 144,
               height = 100,
@@ -621,14 +614,14 @@ data:extend(
         sheets =
         {
           {
-            filename = "__solar-walls__/graphics/wall/wall-gate.png",
+            filename = path_g .. "wall/wall-gate.png",
             priority = "extra-high",
             width = 42,
             height = 56,
             shift = util.by_pixel(0, -8),
             hr_version =
             {
-              filename = "__solar-walls__/graphics/wall/hr-wall-gate.png",
+              filename = path_g .. "wall/hr-wall-gate.png",
               priority = "extra-high",
               width = 82,
               height = 108,
@@ -637,7 +630,7 @@ data:extend(
             }
           },
           {
-            filename = "__solar-walls__/graphics/wall/wall-gate-shadow.png",
+            filename = path_g .. "wall/wall-gate-shadow.png",
             priority = "extra-high",
             width = 66,
             height = 40,
@@ -645,7 +638,7 @@ data:extend(
             draw_as_shadow = true,
             hr_version =
             {
-              filename = "__solar-walls__/graphics/wall/hr-wall-gate-shadow.png",
+              filename = path_g .. "wall/hr-wall-gate-shadow.png",
               priority = "extra-high",
               width = 130,
               height = 78,
@@ -662,7 +655,7 @@ data:extend(
     {
       sheet =
       {
-        filename = "__solar-walls__/graphics/wall/wall-diode-green.png",
+        filename = path_g .. "wall/wall-diode-green.png",
         priority = "extra-high",
         width = 38,
         height = 24,
@@ -670,7 +663,7 @@ data:extend(
         shift = util.by_pixel(-2, -24),
         hr_version =
         {
-          filename = "__solar-walls__/graphics/wall/hr-wall-diode-green.png",
+          filename = path_g .. "wall/hr-wall-diode-green.png",
           priority = "extra-high",
           width = 72,
           height = 44,
@@ -717,7 +710,7 @@ data:extend(
     {
       sheet =
       {
-        filename = "__solar-walls__/graphics/wall/wall-diode-red.png",
+        filename = path_g .. "wall/wall-diode-red.png",
         priority = "extra-high",
         width = 38,
         height = 24,
@@ -725,7 +718,7 @@ data:extend(
         shift = util.by_pixel(-2, -24),
         hr_version =
         {
-          filename = "__solar-walls__/graphics/wall/hr-wall-diode-red.png",
+          filename = path_g .. "wall/hr-wall-diode-red.png",
           priority = "extra-high",
           width = 72,
           height = 44,
@@ -774,10 +767,7 @@ data:extend(
     default_output_signal = data.is_demo and {type = "virtual", name = "signal-green"} or {type = "virtual", name = "signal-G"}
   },
 
---- tech
-
-
-
+-- Solar Wall: Technology
   {
     type = "technology",
     name = "solar-wall",
@@ -806,7 +796,8 @@ data:extend(
     order = "c-e-a",
   },
 
+})
 
-
-
-  })
+local stack_size_settings = settings.startup['solar-wall-stack-size'].value
+data.raw.item["stone-wall"].stack_size = stack_size_settings
+data.raw.item["solar-wall-2"].stack_size = stack_size_settings
