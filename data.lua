@@ -19,7 +19,7 @@ local wall_tier = {
     icon = path_g .. "solar-wall.png",
     order = "a[stone-wall]-b[solar-wall]",
     energy_required = 10,
-    max_health = 350,
+    max_health = settings.startup["solar-wall-max-health"].value,
     ingredients = 
     {
       { "solar-panel", 1 },

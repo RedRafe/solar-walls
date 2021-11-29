@@ -21,6 +21,14 @@ data:extend({
         setting_type = "startup",
         minimum_value = 1,
         maximum_value = 1000,
-        default_value = 500
+        default_value = 100
+    },
+    {
+        type = "int-setting",
+        name = "solar-wall-max-health",
+        setting_type = "startup",
+        minimum_value = 1,
+        maximum_value = 10000,
+        default_value = 350
     }
 })
