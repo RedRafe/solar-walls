@@ -1,2 +1,2 @@
-require("wall")
-require("gate")
+--require("wall")
+--require("gate")

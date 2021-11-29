@@ -1,4 +1,4 @@
-Version: 0.0.14 (NOT official, by RedRafe)
+Version: 0.0.14 (by RedRafe)
   Bugfixes:
     - Fixed collision boxes of solar walls
     - Fixed solar panels used by solar walls causing collisions
