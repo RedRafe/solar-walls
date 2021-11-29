@@ -1,2 +1,0 @@
---require("wall")
---require("gate")

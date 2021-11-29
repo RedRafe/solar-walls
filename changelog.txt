@@ -3,6 +3,7 @@ Version: 0.0.15
     - Fixed ghost wall not rebuilding solar interface
   Features:
     - Added settings to change Solar Wall health
+    - Added compatibility with Accumulator Walls
   Changes:
     - Migrated prototypes: from "solar-wall-2" to "solar-wall"
     - Default stack size back to 100
