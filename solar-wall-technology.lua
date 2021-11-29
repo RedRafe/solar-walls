@@ -18,7 +18,7 @@ local function Technology(technology_tier)
   return {
     type = "technology",
     name = technology_tier.name,
-    icon_size = 128,
+    icon_size = 256,
     icon = "__base__/graphics/technology/solar-energy.png",
     effects =
     {
