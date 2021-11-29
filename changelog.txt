@@ -1,3 +1,11 @@
+Version: 0.0.15
+  Bugfixes:
+    - Fixed ghost wall not rebuilding solar interface
+  Changes:
+    - Migrated prototypes: stone-wall-2 -> stone-wall
+    - default stack size back to 100
+    - Refactored scripts to improve future compatibility
+---------------------------------------------------------------------------------------------------
 Version: 0.0.14 (by RedRafe)
   Bugfixes:
     - Fixed collision boxes of solar walls

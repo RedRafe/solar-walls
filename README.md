@@ -1,8 +1,9 @@
 # solar-walls
 Update for [Solar Walls](https://mods.factorio.com/mod/SolarWalls) mod (by DellAquila), adds walls equipped with solar panel
 
+### Version 0.0.15
 ### Version 0.0.14
-Version: 0.0.14 (NOT official, updated by RedRafe)
+Version: 0.0.14 
   Bugfixes:
     - Fixed collision boxes of solar walls
     - Fixed solar panels used by solar walls causing collisions
