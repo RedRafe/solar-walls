@@ -26,7 +26,7 @@ local wall_tier = {
 	    { "stone-wall", settings.startup["solar-wall-recipe-ratio"].value }
     },
     result_count = settings.startup["solar-wall-recipe-ratio"].value,
-    stack_size = settings.startup['solar-wall-stack-size'].value,
+    stack_size = settings.startup["solar-wall-stack-size"].value,
     resistances = data.raw.wall["stone-wall"].resistances
   }
 }
@@ -49,3 +49,7 @@ local technology_tier ={
 SolarWall.NewTierInterface(solar_panel[1])
 SolarWall.NewTierWall(wall_tier[1])
 SolarWall.NewTierTechnology(technology_tier[1])
+
+for key, value in pairs(data.raw.wall) do
+  data.raw.wall[value.name].stack_size = settings.startup["solar-wall-stack-size"].value
+end
