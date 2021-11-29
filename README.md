@@ -1,7 +1,16 @@
 # solar-walls
-Update for [Solar Walls](https://mods.factorio.com/mod/SolarWalls) mod (by DellAquila), adds walls equipped with solar panel
+Update for [Solar Walls](https://mods.factorio.com/mod/SolarWalls) mod (by DellAquila), adds walls equipped with solar panel.
 
 ### Version 0.0.15
+  Bugfixes:
+    - Fixed ghost wall not rebuilding solar interface
+  Features:
+    - Added settings to change Solar Wall health
+    - Added compatibility with [Accumulator Walls](https://mods.factorio.com/mod/accumulator-walls)
+  Changes:
+    - Migrated prototypes: from "solar-wall-2" to "solar-wall"
+    - Default stack size back to 100
+    - Refactored scripts to improve future compatibility
 ### Version 0.0.14
 Version: 0.0.14 
   Bugfixes:
