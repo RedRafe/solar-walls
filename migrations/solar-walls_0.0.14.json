@@ -1,0 +1,13 @@
+{
+  "entity":
+  [
+    ["solar-wall-2", "solar-wall"]
+  ],
+  "item": [
+    ["solar-wall-2", "solar-wall"]
+  ],
+  "recipe": [
+    ["solar-wall-2", "solar-wall"]
+  ],
+  "technology": []
+}
