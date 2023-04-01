@@ -57,3 +57,38 @@ script.on_event(defines.events.on_player_mined_entity, on_destroy, solar_wall_fi
 script.on_event(defines.events.on_robot_mined_entity,  on_destroy, solar_wall_filters)
 script.on_event(defines.events.on_entity_died,         on_destroy, solar_wall_filters)
 script.on_event(defines.events.script_raised_destroy,  on_destroy, solar_wall_filters)
+
+-- @ dolly_event 
+--  .player_index: player_index, The index of the player who moved the entity
+--  .moved_entity: LuaEntity,    The entity that was moved
+--  .start_pos: Position,        The position that the entity was moved from
+local function on_moved(dolly_event)
+  local entity = dolly_event.moved_entity
+  if not entity or not entity.valid then return end
+
+  local entity_name = entity.name
+  if not SWControl.isKey(entity_name) then return end
+
+  local old_position = dolly_event.start_pos
+  if not old_position then return end
+
+  local old_entity = {
+    name     = entity.name,
+    valid    = entity.valid,
+    surface  = entity.surface,
+    position = old_position,
+  }
+
+  on_destroy({ entity = old_entity })
+  on_built({ entity = entity })
+end
+
+script.on_load(
+  function()
+    -- Picker Dollies compatibility
+    if remote.interfaces["PickerDollies"] and remote.interfaces["PickerDollies"]["dolly_moved_entity_id"] then
+      script.on_event(remote.call("PickerDollies", "dolly_moved_entity_id"), on_moved)
+      remote.call("PickerDollies", "add_blacklist_name", "wall-solar-panel")
+    end
+  end
+)

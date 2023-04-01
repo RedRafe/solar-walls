@@ -4,6 +4,8 @@ Date: 2023.04.01
   Bugfixes:
     - Fixed solar-panel-interface not being destroyed when using cut tool in editor mode
     - Added migration from previous versions
+  Features:
+    - Added Picker Dollies compatibility
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.15
   Bugfixes:

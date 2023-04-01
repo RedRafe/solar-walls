@@ -17,4 +17,9 @@ for ___, surface in pairs(game.surfaces) do
   end
 end
 
-if c > 0 then game.print("Solar Walls: "c.." residual interface destroyed", {r=1,g=0.5,b=0,a=1}) end
+if c > 0 then 
+  game.print(
+    "Solar Walls: "..c.." residual interface destroyed",
+    {r = 1, g = 0.5, b = 0, a = 1}
+  )
+end
