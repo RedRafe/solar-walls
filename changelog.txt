@@ -1,3 +1,10 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.0.16
+Date: 2023.04.01
+  Bugfixes:
+    - Fixed solar-panel-interface not being destroyed when using cut tool in editor mode
+    - Added migration from previous versions
+---------------------------------------------------------------------------------------------------
 Version: 0.0.15
   Bugfixes:
     - Fixed ghost wall not rebuilding solar interface

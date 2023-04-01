@@ -23,7 +23,7 @@ local wall_tier = {
     ingredients = 
     {
       { "solar-panel", 1 },
-	    { "stone-wall", settings.startup["solar-wall-recipe-ratio"].value }
+      { "stone-wall", settings.startup["solar-wall-recipe-ratio"].value }
     },
     result_count = settings.startup["solar-wall-recipe-ratio"].value,
     stack_size = settings.startup["solar-wall-stack-size"].value,

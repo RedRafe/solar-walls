@@ -23,7 +23,7 @@ local function SolarPanelInterfaceEntity(solar_panel)
     },
     collision_box = {{0, 0}, {0, 0}},
     selection_box = {{0, 0}, {0, 0}},
-	  hidden = true,
+    hidden = true,
     energy_source =
     {
       type = "electric",
@@ -56,7 +56,7 @@ local function SolarPanelInterfaceItem(solar_panel)
     name = solar_panel.name,
     icon = solar_panel.icon,
     icon_size = 32,
-	  hidden = true,
+    hidden = true,
     subgroup = "defensive-structure",
     order = solar_panel.order,
     place_result = solar_panel.name,
@@ -74,13 +74,13 @@ local function SolarPanelInterfaceRecipe(solar_panel)
     type = "recipe",
     name = solar_panel.name,
     energy_required = 10,
-	  icon = solar_panel.icon,
+    icon = solar_panel.icon,
     icon_size = 32,
     enabled = false,
-	  hidden = true,
+    hidden = true,
     ingredients = {},
     result = solar_panel.name,
-	  result_count = 1
+    result_count = 1
   }
 end
 
