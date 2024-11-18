@@ -1,7 +1,7 @@
 local SWControl = {}
 
 SWControl.interface = {
-  ["solar-wall"] = "wall-solar-panel"
+  ['solar-wall'] = 'wall-solar-panel'
 }
 
 SWControl.isKey = function(entity_name)
@@ -20,6 +20,7 @@ local function on_built(event)
     name = SWControl.interface[entity_name],
     position = entity.position,
     force = entity.force
+    quality = entity.quality 
   }
   interface.destructible = false
 end
@@ -41,8 +42,8 @@ local function on_destroy(event)
 end
 
 local solar_wall_filters = {
-  {filter = "name", name = "solar-wall"},
-  {filter = "type", type = "wall", mode = "and"}
+  { filter = 'name', name = 'solar-wall' },
+  { filter = 'type', type = 'wall', mode = 'and' }
 }
 
 -- build events
@@ -51,6 +52,7 @@ script.on_event(defines.events.on_entity_cloned,      on_built, solar_wall_filte
 script.on_event(defines.events.on_robot_built_entity, on_built, solar_wall_filters)
 script.on_event(defines.events.script_raised_revive,  on_built, solar_wall_filters)
 script.on_event(defines.events.script_raised_built,   on_built, solar_wall_filters)
+script.on_event(defines.events.on_space_platform_built_entity, on_built, solar_wall_filters)
 
 -- destroy events
 script.on_event(defines.events.on_player_mined_entity, on_destroy, solar_wall_filters)
@@ -86,9 +88,9 @@ end
 script.on_load(
   function()
     -- Picker Dollies compatibility
-    if remote.interfaces["PickerDollies"] and remote.interfaces["PickerDollies"]["dolly_moved_entity_id"] then
-      script.on_event(remote.call("PickerDollies", "dolly_moved_entity_id"), on_moved)
-      remote.call("PickerDollies", "add_blacklist_name", "wall-solar-panel")
+    if remote.interfaces['PickerDollies'] and remote.interfaces['PickerDollies']['dolly_moved_entity_id'] then
+      script.on_event(remote.call('PickerDollies', 'dolly_moved_entity_id'), on_moved)
+      remote.call('PickerDollies', 'add_blacklist_name', 'wall-solar-panel')
     end
   end
 )

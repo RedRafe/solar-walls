@@ -1,4 +1,6 @@
-if not SolarWall then SolarWall = {} end
+if not SolarWall then
+  SolarWall = {}
+end
 
 --[[
   @ TECHNOLOGY_TIER
@@ -15,25 +17,14 @@ if not SolarWall then SolarWall = {} end
 ]]
 local function Technology(technology_tier)
   return {
-    type = "technology",
+    type = 'technology',
     name = technology_tier.name,
     icon_size = 256,
-    icon = "__base__/graphics/technology/solar-energy.png",
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = technology_tier.name
-      }
-    },
+    icon = '__base__/graphics/technology/solar-energy.png',
+    effects = { { type = 'unlock-recipe', recipe = technology_tier.name } },
     prerequisites = technology_tier.prerequisites,
-    unit =
-    {
-      count = technology_tier.count,
-      ingredients = technology_tier.ingredients,
-      time = technology_tier.time
-    },
-    order = "c-e-a",
+    unit = { count = technology_tier.count, ingredients = technology_tier.ingredients, time = technology_tier.time },
+    order = 'c-e-a',
   }
 end
 

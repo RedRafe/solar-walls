@@ -1,6 +1,8 @@
-if not SolarWall then SolarWall = {} end
+if not SolarWall then
+  SolarWall = {}
+end
 
-local path_g = "__solar-walls__/graphics/"
+local path_g = '__solar-walls__/graphics/'
 
 --[[
   @ SOLAR_PANEL
@@ -11,35 +13,25 @@ local path_g = "__solar-walls__/graphics/"
 ]]
 local function SolarPanelInterfaceEntity(solar_panel)
   return {
-    type = "solar-panel",
+    type = 'solar-panel',
     name = solar_panel.name,
     icon = solar_panel.icon,
     icon_size = 32,
-    flags =
-    {
-      "not-on-map",
-      "placeable-off-grid",
-      "not-in-kill-statistics"
-    },
-    collision_box = {{0, 0}, {0, 0}},
-    selection_box = {{0, 0}, {0, 0}},
+    flags = { 'not-on-map', 'placeable-off-grid', 'not-in-kill-statistics' },
+    collision_box = { { 0, 0 }, { 0, 0 } },
+    selection_box = { { 0, 0 }, { 0, 0 } },
     hidden = true,
-    energy_source =
-    {
-      type = "electric",
-      usage_priority = "solar"
-    },
-    picture =
-    {
+    energy_source = { type = 'electric', usage_priority = 'solar' },
+    picture = {
       {
-        filename = path_g .. "transparent.png",
-        priority = "extra-high",
+        filename = path_g .. 'transparent.png',
+        priority = 'extra-high',
         width = 32,
         height = 42,
         shift = util.by_pixel(0.078125, -0.3),
       },
     },
-    production = tostring(solar_panel.production) .. solar_panel.units
+    production = tostring(solar_panel.production) .. solar_panel.units,
   }
 end
 
@@ -52,15 +44,15 @@ end
 ]]
 local function SolarPanelInterfaceItem(solar_panel)
   return {
-    type = "item",
+    type = 'item',
     name = solar_panel.name,
     icon = solar_panel.icon,
     icon_size = 32,
     hidden = true,
-    subgroup = "defensive-structure",
+    subgroup = 'defensive-structure',
     order = solar_panel.order,
     place_result = solar_panel.name,
-    stack_size = solar_panel.stack_size
+    stack_size = solar_panel.stack_size,
   }
 end
 
@@ -71,7 +63,7 @@ end
 ]]
 local function SolarPanelInterfaceRecipe(solar_panel)
   return {
-    type = "recipe",
+    type = 'recipe',
     name = solar_panel.name,
     energy_required = 10,
     icon = solar_panel.icon,
@@ -80,7 +72,7 @@ local function SolarPanelInterfaceRecipe(solar_panel)
     hidden = true,
     ingredients = {},
     result = solar_panel.name,
-    result_count = 1
+    result_count = 1,
   }
 end
 
