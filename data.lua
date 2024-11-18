@@ -33,7 +33,7 @@ local wall_tier = {
 local technology_tier = {
   {
     name = 'solar-wall',
-    prerequisites = { 'solar-energy' },
+    prerequisites = { 'solar-energy', 'stone-wall' },
     count = 160,
     ingredients = {
       { 'automation-science-pack', 1 },
