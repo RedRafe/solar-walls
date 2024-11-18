@@ -17,7 +17,7 @@ local function SolarPanelInterfaceEntity(solar_panel)
     name = solar_panel.name,
     icon = solar_panel.icon,
     icon_size = 32,
-    flags = { 'not-on-map', 'placeable-off-grid', 'not-in-kill-statistics' },
+    flags = { 'not-on-map', 'placeable-off-grid', 'not-in-kill-statistics', 'hide-alt-info' },
     collision_box = { { 0, 0 }, { 0, 0 } },
     selection_box = { { 0, 0 }, { 0, 0 } },
     hidden = true,
@@ -31,6 +31,7 @@ local function SolarPanelInterfaceEntity(solar_panel)
         shift = util.by_pixel(0.078125, -0.3),
       },
     },
+    quality_indicator_scale = 0,
     production = tostring(solar_panel.production) .. solar_panel.units,
   }
 end

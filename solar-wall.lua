@@ -409,9 +409,9 @@ local function WallEntity(wall_tier)
       intensity = 0.3,
     }),
 
-    circuit_connector = circuit_connector_definitions["wall"],
+    circuit_connector = circuit_connector_definitions['wall'],
     circuit_wire_max_distance = default_circuit_wire_max_distance,
-    default_output_signal = {type = "virtual", name = "signal-G"}
+    default_output_signal = {type = 'virtual', name = 'signal-G'},
   }
 end
 

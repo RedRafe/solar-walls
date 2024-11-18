@@ -19,7 +19,7 @@ local function on_built(event)
   local interface = entity.surface.create_entity{ 
     name = SWControl.interface[entity_name],
     position = entity.position,
-    force = entity.force
+    force = entity.force,
     quality = entity.quality 
   }
   interface.destructible = false

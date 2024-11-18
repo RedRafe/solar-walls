@@ -1,6 +1,6 @@
-require('solar-panel-interface')
-require('solar-wall')
-require('solar-wall-technology')
+require 'solar-panel-interface'
+require 'solar-wall'
+require 'solar-wall-technology'
 
 local path_g = '__solar-walls__/graphics/'
 
